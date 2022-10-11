@@ -59,7 +59,7 @@
                         <td>@usuario.Email</td>
                         <td>@(usuario.Perfil == ControloDeContatos.Enums.PerfilEnum.Admin ? "Admin" : "Padrão")</td>
                         <td>
-                            <a href="javascript:" class="btn btn-success btn-sm btn-total-contatos">
+                            <a href="javascript:" usuario-id="@usuario.Id" class="btn btn-success btn-sm btn-total-contatos">
                                 @(usuario.Contatos != null && usuario.Contatos.Any() ? usuario.Contatos.Count() : 0)
                             </a>
                         </td>
@@ -84,36 +84,20 @@
 
 
     <div id="modalContatosUsuario" class="modal" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Lista de contatos</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
 
                 <div class="modal-body">
 
-                    <table id="tabela-contato" class="table">
+                    <div id="listaContatosUsuario">
 
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Nome</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Telefone</th>
-                            </tr>
-                        </thead>
-
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>2</td>
-                                <td>3</td>
-                                <td>4</td>
-                            </tr>
-                        </tbody>
-
-                    </table>
+                    </div>
 
                 </div>
             </div>

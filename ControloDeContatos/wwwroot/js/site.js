@@ -6,8 +6,18 @@
 $(document).ready(function () {
     $('.table').DataTable();
 
-    $('.btn-total-contatos').click(function(){
-        $('#modalContatosUsuario').modal();
+    $('.btn-total-contatos').click(function () {
+        var usuarioId = $(this).attr('usuario-id');
+
+        $.ajax({
+            type: 'GET',
+            url: '/usuario/ListarContatosPorUsuarioId/' + usuarioId,
+            success: function (result) {
+                $("#listaContatosUsuario").html(result);               
+                $('#modalContatosUsuario').modal();
+                getDatatable('#tabela-contatos-usuario');
+            }
+        });   
     });
 });
 
