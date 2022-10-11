@@ -14,3 +14,7 @@ Detalhes:
 - Adicionado criptografia (HASH1) para passwords;
 - Criação de view para sistema de recuperar password;
 - Criação do sistema para recuperar password (Envio de E-mail SMTP)
+- Relacionamento entre separadores/tabelas
+- Criação de um MODAL (com ajax jquery)
+
+#VisualStudio2019
