@@ -1,5 +1,4 @@
-﻿
-@model List<UsuarioModel>
+﻿@model List<UsuarioModel>
 
 @{
     ViewData["Title"] = "Lista de usuários";
@@ -9,13 +8,13 @@
 
     <h1 class="display-4">Lista de Usuários</h1>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-start">   
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a class="btn btn-primary" role="button" asp-controller="Usuario" asp-action="Criar">Adicionar novo usuário</a>
     </div>
 
     <br />
 
-    @if(TempData["MensagemSucesso"] != null)
+    @if (TempData["MensagemSucesso"] != null)
     {
         <div class="alert alert-success" role="alert">
             <button type="button" class="btn btn-dnger btn-sm close-alert" arial-label="Close">X</button>
@@ -42,6 +41,7 @@
                 <th scope="col">Login</th>
                 <th scope="col">Email</th>
                 <th scope="col">Perfil</th>
+                <th scope="col">Total de contatos</th>
                 <th scope="col">Data de cadastro</th>
                 <th scope="col"></th>
             </tr>
@@ -58,6 +58,11 @@
                         <td>@usuario.Login</td>
                         <td>@usuario.Email</td>
                         <td>@(usuario.Perfil == ControloDeContatos.Enums.PerfilEnum.Admin ? "Admin" : "Padrão")</td>
+                        <td>
+                            <a href="javascript:" class="btn btn-success btn-sm btn-total-contatos">
+                                @(usuario.Contatos != null && usuario.Contatos.Any() ? usuario.Contatos.Count() : 0)
+                            </a>
+                        </td>
                         <td>@usuario.DataCadastro</td>
                         <td>
                             <div class="btn-group" role="group">
@@ -76,6 +81,44 @@
         </tbody>
 
     </table>
+
+
+    <div id="modalContatosUsuario" class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Lista de contatos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+
+                    <table id="tabela-contato" class="table">
+
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nome</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Telefone</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 

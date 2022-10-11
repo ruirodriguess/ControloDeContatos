@@ -5,6 +5,10 @@
 
 $(document).ready(function () {
     $('.table').DataTable();
+
+    $('.btn-total-contatos').click(function(){
+        $('#modalContatosUsuario').modal();
+    });
 });
 
 //$(document).ready(function ()
