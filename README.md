@@ -17,4 +17,4 @@ Detalhes:
 - Relacionamento entre separadores/tabelas
 - Criação de um MODAL (com ajax jquery)
 
-#VisualStudio2019
+#VisualStudio2022
