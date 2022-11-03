@@ -6,11 +6,7 @@
 Status: Finished
 ```
 ## Description
-ASP.Net MVC is no longer a term, it has become a trend to develop secure, fast, enterprise web applications worldwide. With this application, I intended to train and do something more "professional", something more used for the business world. I choose MCV because it's extendable and adaptable.
-
-When this application is finished it will be possible to create and register new users in a database. View details of films, producers, cinemas and actors. And finally, add the movie you want to buy and make the payment via paypal. As an admin, it is possible to edit, delete and insert new films, producers, cinemas and actors.
-
-Missing set up payments and registration.
+With the emergence of MVC (Model-View-Controller) there have been changes in terms of web programming, especially in the way it is implemented. In this project I tried to create a very practical system for managing contacts.
 
 
 ## Languages 
